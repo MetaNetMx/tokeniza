@@ -53,12 +53,16 @@ const Navbar = () => {
 
         {/* Desktop CTAs */}
         <div className="hidden lg:flex items-center gap-3">
-          <Button variant="outline" size="sm" className="border-border text-foreground hover:bg-secondary">
-            Iniciar Sesión
-          </Button>
-          <Button size="sm" className="gradient-gold text-accent-foreground font-semibold hover:opacity-90">
-            Crear Cuenta
-          </Button>
+          <Link to="/login">
+            <Button variant="outline" size="sm" className="border-border text-foreground hover:bg-secondary">
+              Iniciar Sesión
+            </Button>
+          </Link>
+          <Link to="/register">
+            <Button size="sm" className="gradient-gold text-accent-foreground font-semibold hover:opacity-90">
+              Crear Cuenta
+            </Button>
+          </Link>
         </div>
 
         {/* Mobile toggle */}
