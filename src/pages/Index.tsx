@@ -1,12 +1,31 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Navbar from "@/components/landing/Navbar";
+import HeroSection from "@/components/landing/HeroSection";
+import TrustBar from "@/components/landing/TrustBar";
+import HowItWorks from "@/components/landing/HowItWorks";
+import FeaturedAssets from "@/components/landing/FeaturedAssets";
+import AssetTypes from "@/components/landing/AssetTypes";
+import ForWhom from "@/components/landing/ForWhom";
+import RegulationSecurity from "@/components/landing/RegulationSecurity";
+import AcademyPreview from "@/components/landing/AcademyPreview";
+import Testimonials from "@/components/landing/Testimonials";
+import FAQ from "@/components/landing/FAQ";
+import Footer from "@/components/landing/Footer";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background text-foreground">
+      <Navbar />
+      <HeroSection />
+      <TrustBar />
+      <HowItWorks />
+      <FeaturedAssets />
+      <AssetTypes />
+      <ForWhom />
+      <RegulationSecurity />
+      <AcademyPreview />
+      <Testimonials />
+      <FAQ />
+      <Footer />
     </div>
   );
 };
