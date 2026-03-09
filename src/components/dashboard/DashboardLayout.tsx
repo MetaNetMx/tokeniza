@@ -4,6 +4,7 @@ import { DashboardSidebar } from "@/components/dashboard/DashboardSidebar";
 import { useAuth } from "@/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import { LogOut, User, ArrowLeftRight } from "lucide-react";
+import NotificationDropdown from "@/components/NotificationDropdown";
 
 const DashboardLayout = () => {
   const { user, signOut } = useAuth();
@@ -22,6 +23,7 @@ const DashboardLayout = () => {
                   <span className="hidden md:inline">Ir a Emisor</span>
                 </Button>
               </Link>
+              <NotificationDropdown />
               <span className="text-sm text-muted-foreground hidden sm:block">{user?.email}</span>
               <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
                 <User className="w-4 h-4 text-primary" />
