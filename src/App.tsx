@@ -18,6 +18,8 @@ import Portfolio from "./pages/dashboard/Portfolio";
 import WalletPage from "./pages/dashboard/WalletPage";
 import Transactions from "./pages/dashboard/Transactions";
 import DashboardSettings from "./pages/dashboard/DashboardSettings";
+import Marketplace from "./pages/dashboard/Marketplace";
+import AssetDetail from "./pages/dashboard/AssetDetail";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -42,6 +44,8 @@ const App = () => (
               <Route path="portfolio" element={<Portfolio />} />
               <Route path="wallet" element={<WalletPage />} />
               <Route path="transactions" element={<Transactions />} />
+              <Route path="marketplace" element={<Marketplace />} />
+              <Route path="marketplace/:id" element={<AssetDetail />} />
               <Route path="settings" element={<DashboardSettings />} />
             </Route>
 
