@@ -70,7 +70,7 @@ const HeroSection = () => {
             La plataforma líder de tokenización en Hispanoamérica. Accede a inmuebles, arte, commodities y más con tecnología blockchain, de forma simple y regulada.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
             <Button size="lg" className="gradient-gold text-accent-foreground font-semibold text-base px-8 hover:opacity-90">
               Empieza a Invertir
               <ArrowRight className="w-5 h-5 ml-2" />
@@ -79,6 +79,58 @@ const HeroSection = () => {
               Tokeniza tu Activo
             </Button>
           </div>
+
+          {/* 3D Building-to-Blocks Illustration */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.3 }}
+            className="relative max-w-md mx-auto mb-12"
+          >
+            <div className="relative w-full h-48 flex items-end justify-center gap-1">
+              {/* Building shape decomposing into blocks */}
+              {[...Array(5)].map((_, col) => (
+                <div key={col} className="flex flex-col-reverse gap-1">
+                  {[...Array(col < 2 || col > 2 ? 3 : 5)].map((_, row) => (
+                    <motion.div
+                      key={row}
+                      initial={{ opacity: 1, x: 0, y: 0 }}
+                      animate={{
+                        opacity: [1, 1, 0.7, 1],
+                        x: col < 2 ? [0, -(col === 0 ? 8 : 4), 0] : col > 2 ? [0, (col === 4 ? 8 : 4), 0] : [0, 0, 0],
+                        y: [0, -(row * 2 + 3), 0],
+                      }}
+                      transition={{
+                        duration: 4,
+                        repeat: Infinity,
+                        delay: (col + row) * 0.2,
+                        ease: "easeInOut",
+                      }}
+                      className="w-8 h-8 rounded-sm gradient-blue-cyan opacity-80"
+                    />
+                  ))}
+                </div>
+              ))}
+              {/* Floating digital particles */}
+              {[...Array(6)].map((_, i) => (
+                <motion.div
+                  key={`particle-${i}`}
+                  className="absolute w-2 h-2 rounded-full bg-accent/60"
+                  style={{ left: `${15 + i * 14}%`, bottom: `${30 + (i % 3) * 20}%` }}
+                  animate={{
+                    y: [0, -20, 0],
+                    opacity: [0, 1, 0],
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    delay: i * 0.5,
+                  }}
+                />
+              ))}
+            </div>
+            <p className="text-xs text-muted-foreground text-center mt-3">Activos reales → Tokens digitales</p>
+          </motion.div>
 
           {/* Stats */}
           <motion.div

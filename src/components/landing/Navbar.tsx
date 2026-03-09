@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Hexagon } from "lucide-react";
+import { Menu, X, Hexagon, Globe, Zap } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
@@ -16,6 +16,7 @@ const navLinks = [
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [lang, setLang] = useState("ES");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -50,6 +51,21 @@ const Navbar = () => {
         </div>
 
         <div className="hidden lg:flex items-center gap-3">
+          {/* Blockchain network indicator */}
+          <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-success/10 border border-success/20 text-xs">
+            <Zap className="w-3 h-3 text-success" />
+            <span className="text-success font-medium">Ethereum</span>
+          </div>
+
+          {/* Language selector */}
+          <button
+            onClick={() => setLang(lang === "ES" ? "EN" : "ES")}
+            className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary border border-border text-xs font-medium text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <Globe className="w-3 h-3" />
+            {lang}
+          </button>
+
           <Link to="/login">
             <Button variant="outline" size="sm" className="border-border text-foreground hover:bg-secondary">
               Iniciar Sesión
