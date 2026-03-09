@@ -50,6 +50,21 @@ const Navbar = () => {
         </div>
 
         <div className="hidden lg:flex items-center gap-3">
+          {/* Blockchain network indicator */}
+          <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-success/10 border border-success/20 text-xs">
+            <Zap className="w-3 h-3 text-success" />
+            <span className="text-success font-medium">Ethereum</span>
+          </div>
+
+          {/* Language selector */}
+          <button
+            onClick={() => setLang(lang === "ES" ? "EN" : "ES")}
+            className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary border border-border text-xs font-medium text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <Globe className="w-3 h-3" />
+            {lang}
+          </button>
+
           <Link to="/login">
             <Button variant="outline" size="sm" className="border-border text-foreground hover:bg-secondary">
               Iniciar Sesión
