@@ -38,7 +38,12 @@ const StepDistribution = ({ data, onChange }: Props) => {
     const monthlyRevenue = data.assetValuation * (data.estimatedYield / 100) / 12;
     return simulateDistribution({
       periodRevenue: monthlyRevenue,
-      rules,
+      rules: {
+        investorsPercent: rules.investors,
+        issuerPercent: rules.issuer,
+        reservePercent: rules.reserve,
+        platformPercent: rules.platform,
+      },
       totalTokens: data.totalTokens || 1000,
       holdersCount: 50,
     });
