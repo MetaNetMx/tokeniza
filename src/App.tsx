@@ -23,6 +23,7 @@ import Marketplace from "./pages/dashboard/Marketplace";
 import AssetDetail from "./pages/dashboard/AssetDetail";
 import TokensPage from "./pages/dashboard/TokensPage";
 import Academy from "./pages/dashboard/Academy";
+import UserSettings from "./pages/dashboard/UserSettings";
 
 // Issuer pages
 import IssuerHome from "./pages/issuer/IssuerHome";
@@ -32,6 +33,15 @@ import IssuerInvestors from "./pages/issuer/IssuerInvestors";
 import IssuerReports from "./pages/issuer/IssuerReports";
 import IssuerCompliance from "./pages/issuer/IssuerCompliance";
 import IssuerSettings from "./pages/issuer/IssuerSettings";
+
+// Public pages
+import Calculator from "./pages/Calculator";
+import Empresas from "./pages/Empresas";
+import BlogHome from "./pages/blog/BlogHome";
+import BlogArticle from "./pages/blog/BlogArticle";
+import AcademyHome from "./pages/academy/AcademyHome";
+import CourseDetail from "./pages/academy/CourseDetail";
+import LessonPage from "./pages/academy/LessonPage";
 
 import NotFound from "./pages/NotFound";
 
@@ -52,6 +62,12 @@ const App = () => (
             <Route path="/reset-password" element={<ResetPassword />} />
             <Route path="/kyc" element={<ProtectedRoute><KYC /></ProtectedRoute>} />
 
+            {/* Public pages */}
+            <Route path="/calculadora" element={<Calculator />} />
+            <Route path="/empresas" element={<Empresas />} />
+            <Route path="/blog" element={<BlogHome />} />
+            <Route path="/blog/:articleId" element={<BlogArticle />} />
+
             {/* Investor Dashboard */}
             <Route path="/dashboard" element={<ProtectedRoute><DashboardLayout /></ProtectedRoute>}>
               <Route index element={<DashboardHome />} />
@@ -62,7 +78,14 @@ const App = () => (
               <Route path="marketplace/:id" element={<AssetDetail />} />
               <Route path="tokens" element={<TokensPage />} />
               <Route path="academy" element={<Academy />} />
-              <Route path="settings" element={<DashboardSettings />} />
+              <Route path="settings" element={<UserSettings />} />
+            </Route>
+
+            {/* Academy (inside dashboard) */}
+            <Route path="/academia" element={<ProtectedRoute><DashboardLayout /></ProtectedRoute>}>
+              <Route index element={<AcademyHome />} />
+              <Route path="curso/:courseId" element={<CourseDetail />} />
+              <Route path="leccion/:courseId/:lessonId" element={<LessonPage />} />
             </Route>
 
             {/* Issuer Dashboard */}
@@ -76,7 +99,6 @@ const App = () => (
               <Route path="settings" element={<IssuerSettings />} />
             </Route>
 
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </AuthProvider>
