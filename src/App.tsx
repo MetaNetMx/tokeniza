@@ -18,6 +18,8 @@ import Portfolio from "./pages/dashboard/Portfolio";
 import WalletPage from "./pages/dashboard/WalletPage";
 import Transactions from "./pages/dashboard/Transactions";
 import DashboardSettings from "./pages/dashboard/DashboardSettings";
+import Marketplace from "./pages/dashboard/Marketplace";
+import AssetDetail from "./pages/dashboard/AssetDetail";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
