@@ -14,6 +14,147 @@ export type Database = {
   }
   public: {
     Tables: {
+      issuer_tokens: {
+        Row: {
+          allowed_countries: string[] | null
+          asset_details: Json | null
+          asset_type: string
+          asset_valuation: number
+          blockchain_network: string
+          compliance_checklist: Json | null
+          contract_address: string | null
+          created_at: string
+          description: string | null
+          distribution_frequency: string
+          distribution_method: string | null
+          distribution_rules: Json | null
+          documents_url: string[] | null
+          emission_amount: number
+          estimated_yield: number
+          gallery_urls: string[] | null
+          id: string
+          issuer_id: string
+          jurisdiction_country: string | null
+          kyc_required: boolean
+          legal_documents: Json | null
+          legal_vehicle: string | null
+          lockup_period_days: number | null
+          max_investment: number | null
+          min_investment: number
+          percentage_tokenized: number
+          project_duration_months: number | null
+          project_name: string
+          published_at: string | null
+          requires_legal_advisory: boolean | null
+          round_close_date: string | null
+          sold_tokens: number
+          status: string
+          submitted_at: string | null
+          token_name: string
+          token_price: number
+          token_standard: string
+          token_symbol: string
+          token_type: string
+          total_tokens: number
+          transferable: boolean
+          updated_at: string
+          whitelist_enabled: boolean
+          wizard_step: number
+        }
+        Insert: {
+          allowed_countries?: string[] | null
+          asset_details?: Json | null
+          asset_type?: string
+          asset_valuation?: number
+          blockchain_network?: string
+          compliance_checklist?: Json | null
+          contract_address?: string | null
+          created_at?: string
+          description?: string | null
+          distribution_frequency?: string
+          distribution_method?: string | null
+          distribution_rules?: Json | null
+          documents_url?: string[] | null
+          emission_amount?: number
+          estimated_yield?: number
+          gallery_urls?: string[] | null
+          id?: string
+          issuer_id: string
+          jurisdiction_country?: string | null
+          kyc_required?: boolean
+          legal_documents?: Json | null
+          legal_vehicle?: string | null
+          lockup_period_days?: number | null
+          max_investment?: number | null
+          min_investment?: number
+          percentage_tokenized?: number
+          project_duration_months?: number | null
+          project_name: string
+          published_at?: string | null
+          requires_legal_advisory?: boolean | null
+          round_close_date?: string | null
+          sold_tokens?: number
+          status?: string
+          submitted_at?: string | null
+          token_name: string
+          token_price?: number
+          token_standard?: string
+          token_symbol: string
+          token_type?: string
+          total_tokens?: number
+          transferable?: boolean
+          updated_at?: string
+          whitelist_enabled?: boolean
+          wizard_step?: number
+        }
+        Update: {
+          allowed_countries?: string[] | null
+          asset_details?: Json | null
+          asset_type?: string
+          asset_valuation?: number
+          blockchain_network?: string
+          compliance_checklist?: Json | null
+          contract_address?: string | null
+          created_at?: string
+          description?: string | null
+          distribution_frequency?: string
+          distribution_method?: string | null
+          distribution_rules?: Json | null
+          documents_url?: string[] | null
+          emission_amount?: number
+          estimated_yield?: number
+          gallery_urls?: string[] | null
+          id?: string
+          issuer_id?: string
+          jurisdiction_country?: string | null
+          kyc_required?: boolean
+          legal_documents?: Json | null
+          legal_vehicle?: string | null
+          lockup_period_days?: number | null
+          max_investment?: number | null
+          min_investment?: number
+          percentage_tokenized?: number
+          project_duration_months?: number | null
+          project_name?: string
+          published_at?: string | null
+          requires_legal_advisory?: boolean | null
+          round_close_date?: string | null
+          sold_tokens?: number
+          status?: string
+          submitted_at?: string | null
+          token_name?: string
+          token_price?: number
+          token_standard?: string
+          token_symbol?: string
+          token_type?: string
+          total_tokens?: number
+          transferable?: boolean
+          updated_at?: string
+          whitelist_enabled?: boolean
+          wizard_step?: number
+        }
+        Relationships: []
+      }
       marketplace_assets: {
         Row: {
           asset_type: string
@@ -214,6 +355,97 @@ export type Database = {
           user_id?: string
         }
         Relationships: []
+      }
+      token_distributions: {
+        Row: {
+          breakdown: Json | null
+          created_at: string
+          distributed_amount: number
+          distributed_at: string | null
+          id: string
+          issuer_id: string
+          period_end: string
+          period_start: string
+          status: string
+          token_id: string
+          total_revenue: number
+        }
+        Insert: {
+          breakdown?: Json | null
+          created_at?: string
+          distributed_amount?: number
+          distributed_at?: string | null
+          id?: string
+          issuer_id: string
+          period_end: string
+          period_start: string
+          status?: string
+          token_id: string
+          total_revenue?: number
+        }
+        Update: {
+          breakdown?: Json | null
+          created_at?: string
+          distributed_amount?: number
+          distributed_at?: string | null
+          id?: string
+          issuer_id?: string
+          period_end?: string
+          period_start?: string
+          status?: string
+          token_id?: string
+          total_revenue?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "token_distributions_token_id_fkey"
+            columns: ["token_id"]
+            isOneToOne: false
+            referencedRelation: "issuer_tokens"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      token_investments: {
+        Row: {
+          amount_invested: number
+          created_at: string
+          id: string
+          invested_at: string
+          investor_id: string
+          status: string
+          token_id: string
+          tokens_purchased: number
+        }
+        Insert: {
+          amount_invested?: number
+          created_at?: string
+          id?: string
+          invested_at?: string
+          investor_id: string
+          status?: string
+          token_id: string
+          tokens_purchased?: number
+        }
+        Update: {
+          amount_invested?: number
+          created_at?: string
+          id?: string
+          invested_at?: string
+          investor_id?: string
+          status?: string
+          token_id?: string
+          tokens_purchased?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "token_investments_token_id_fkey"
+            columns: ["token_id"]
+            isOneToOne: false
+            referencedRelation: "issuer_tokens"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       transactions: {
         Row: {

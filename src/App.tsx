@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "@/hooks/useAuth";
 import ProtectedRoute from "@/components/auth/ProtectedRoute";
 import DashboardLayout from "@/components/dashboard/DashboardLayout";
+import IssuerLayout from "@/components/issuer/IssuerLayout";
 
 import Index from "./pages/Index";
 import Login from "./pages/Login";
@@ -22,6 +23,16 @@ import Marketplace from "./pages/dashboard/Marketplace";
 import AssetDetail from "./pages/dashboard/AssetDetail";
 import TokensPage from "./pages/dashboard/TokensPage";
 import Academy from "./pages/dashboard/Academy";
+
+// Issuer pages
+import IssuerHome from "./pages/issuer/IssuerHome";
+import CreateToken from "./pages/issuer/CreateToken";
+import IssuerAssets from "./pages/issuer/IssuerAssets";
+import IssuerInvestors from "./pages/issuer/IssuerInvestors";
+import IssuerReports from "./pages/issuer/IssuerReports";
+import IssuerCompliance from "./pages/issuer/IssuerCompliance";
+import IssuerSettings from "./pages/issuer/IssuerSettings";
+
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -41,6 +52,7 @@ const App = () => (
             <Route path="/reset-password" element={<ResetPassword />} />
             <Route path="/kyc" element={<ProtectedRoute><KYC /></ProtectedRoute>} />
 
+            {/* Investor Dashboard */}
             <Route path="/dashboard" element={<ProtectedRoute><DashboardLayout /></ProtectedRoute>}>
               <Route index element={<DashboardHome />} />
               <Route path="portfolio" element={<Portfolio />} />
@@ -51,6 +63,17 @@ const App = () => (
               <Route path="tokens" element={<TokensPage />} />
               <Route path="academy" element={<Academy />} />
               <Route path="settings" element={<DashboardSettings />} />
+            </Route>
+
+            {/* Issuer Dashboard */}
+            <Route path="/emisor" element={<ProtectedRoute><IssuerLayout /></ProtectedRoute>}>
+              <Route index element={<IssuerHome />} />
+              <Route path="create" element={<CreateToken />} />
+              <Route path="assets" element={<IssuerAssets />} />
+              <Route path="investors" element={<IssuerInvestors />} />
+              <Route path="reports" element={<IssuerReports />} />
+              <Route path="compliance" element={<IssuerCompliance />} />
+              <Route path="settings" element={<IssuerSettings />} />
             </Route>
 
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

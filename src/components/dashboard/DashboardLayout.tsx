@@ -1,9 +1,9 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { DashboardSidebar } from "@/components/dashboard/DashboardSidebar";
 import { useAuth } from "@/hooks/useAuth";
 import { Button } from "@/components/ui/button";
-import { LogOut, User } from "lucide-react";
+import { LogOut, User, ArrowLeftRight } from "lucide-react";
 
 const DashboardLayout = () => {
   const { user, signOut } = useAuth();
@@ -16,6 +16,12 @@ const DashboardLayout = () => {
           <header className="h-16 flex items-center justify-between border-b border-border px-4">
             <SidebarTrigger className="ml-0" />
             <div className="flex items-center gap-3">
+              <Link to="/emisor">
+                <Button variant="ghost" size="sm" className="gap-2 text-muted-foreground">
+                  <ArrowLeftRight className="w-4 h-4" />
+                  <span className="hidden md:inline">Ir a Emisor</span>
+                </Button>
+              </Link>
               <span className="text-sm text-muted-foreground hidden sm:block">{user?.email}</span>
               <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
                 <User className="w-4 h-4 text-primary" />
