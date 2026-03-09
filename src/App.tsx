@@ -48,6 +48,8 @@ const App = () => (
               <Route path="transactions" element={<Transactions />} />
               <Route path="marketplace" element={<Marketplace />} />
               <Route path="marketplace/:id" element={<AssetDetail />} />
+              <Route path="tokens" element={<TokensPage />} />
+              <Route path="academy" element={<Academy />} />
               <Route path="settings" element={<DashboardSettings />} />
             </Route>
 
