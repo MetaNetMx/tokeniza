@@ -96,10 +96,8 @@ const Navbar = () => {
                 </a>
               ))}
               <div className="flex flex-col gap-2 pt-2 border-t border-border">
-                <Button variant="outline" size="sm">Iniciar Sesión</Button>
-                <Button size="sm" className="gradient-gold text-accent-foreground font-semibold">
-                  Crear Cuenta
-                </Button>
+                <Link to="/login"><Button variant="outline" size="sm" className="w-full">Iniciar Sesión</Button></Link>
+                <Link to="/register"><Button size="sm" className="w-full gradient-gold text-accent-foreground font-semibold">Crear Cuenta</Button></Link>
               </div>
             </div>
           </motion.div>
