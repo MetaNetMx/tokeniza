@@ -37,6 +37,10 @@
     --cyan: 187 92% 43%;
     --gold: 43 96% 56%;
     --deep-blue: 216 50% 8%;
+    --success: 142 76% 36%;
+    --success-foreground: 210 40% 98%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 216 50% 8%;
 
     --sidebar-background: 216 45% 6%;
     --sidebar-foreground: 210 40% 96%;
