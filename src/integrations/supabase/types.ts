@@ -14,6 +14,102 @@ export type Database = {
   }
   public: {
     Tables: {
+      marketplace_assets: {
+        Row: {
+          asset_type: string
+          blockchain_network: string | null
+          category: string
+          contract_address: string | null
+          created_at: string
+          description: string | null
+          distribution_frequency: string | null
+          documents_url: string[] | null
+          end_date: string | null
+          expected_yield: number
+          gallery_urls: string[] | null
+          id: string
+          image_url: string | null
+          location_address: string | null
+          location_city: string | null
+          location_country: string | null
+          location_lat: number | null
+          location_lng: number | null
+          min_investment: number
+          name: string
+          risk_level: string | null
+          sold_tokens: number
+          start_date: string | null
+          status: string
+          token_name: string
+          token_price: number
+          token_symbol: string
+          total_tokens: number
+          updated_at: string
+        }
+        Insert: {
+          asset_type?: string
+          blockchain_network?: string | null
+          category?: string
+          contract_address?: string | null
+          created_at?: string
+          description?: string | null
+          distribution_frequency?: string | null
+          documents_url?: string[] | null
+          end_date?: string | null
+          expected_yield?: number
+          gallery_urls?: string[] | null
+          id?: string
+          image_url?: string | null
+          location_address?: string | null
+          location_city?: string | null
+          location_country?: string | null
+          location_lat?: number | null
+          location_lng?: number | null
+          min_investment?: number
+          name: string
+          risk_level?: string | null
+          sold_tokens?: number
+          start_date?: string | null
+          status?: string
+          token_name: string
+          token_price?: number
+          token_symbol: string
+          total_tokens?: number
+          updated_at?: string
+        }
+        Update: {
+          asset_type?: string
+          blockchain_network?: string | null
+          category?: string
+          contract_address?: string | null
+          created_at?: string
+          description?: string | null
+          distribution_frequency?: string | null
+          documents_url?: string[] | null
+          end_date?: string | null
+          expected_yield?: number
+          gallery_urls?: string[] | null
+          id?: string
+          image_url?: string | null
+          location_address?: string | null
+          location_city?: string | null
+          location_country?: string | null
+          location_lat?: number | null
+          location_lng?: number | null
+          min_investment?: number
+          name?: string
+          risk_level?: string | null
+          sold_tokens?: number
+          start_date?: string | null
+          status?: string
+          token_name?: string
+          token_price?: number
+          token_symbol?: string
+          total_tokens?: number
+          updated_at?: string
+        }
+        Relationships: []
+      }
       portfolios: {
         Row: {
           asset_name: string
