@@ -44,6 +44,8 @@ const App = () => (
               <Route path="portfolio" element={<Portfolio />} />
               <Route path="wallet" element={<WalletPage />} />
               <Route path="transactions" element={<Transactions />} />
+              <Route path="marketplace" element={<Marketplace />} />
+              <Route path="marketplace/:id" element={<AssetDetail />} />
               <Route path="settings" element={<DashboardSettings />} />
             </Route>
 
