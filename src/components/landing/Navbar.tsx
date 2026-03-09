@@ -5,12 +5,12 @@ import { Menu, X, Hexagon } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { label: "Inicio", href: "#inicio" },
-  { label: "Cómo Funciona", href: "#como-funciona" },
-  { label: "Activos", href: "#activos" },
-  { label: "Marketplace", href: "#marketplace" },
-  { label: "Academia", href: "#academia" },
-  { label: "Blog", href: "#blog" },
+  { label: "Inicio", href: "/" },
+  { label: "Marketplace", href: "/dashboard/marketplace" },
+  { label: "Calculadora", href: "/calculadora" },
+  { label: "Academia", href: "/academia" },
+  { label: "Blog", href: "/blog" },
+  { label: "Para Empresas", href: "/empresas" },
 ];
 
 const Navbar = () => {
@@ -30,28 +30,25 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto flex items-center justify-between h-16 px-4 lg:px-8">
-        {/* Logo */}
-        <a href="#inicio" className="flex items-center gap-2 group">
+        <Link to="/" className="flex items-center gap-2 group">
           <Hexagon className="w-8 h-8 text-accent group-hover:text-cyan transition-colors" />
           <span className="font-display text-xl font-bold tracking-tight text-foreground">
             TOKENIZA
           </span>
-        </a>
+        </Link>
 
-        {/* Desktop Nav */}
         <div className="hidden lg:flex items-center gap-6">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
-              href={link.href}
+              to={link.href}
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </div>
 
-        {/* Desktop CTAs */}
         <div className="hidden lg:flex items-center gap-3">
           <Link to="/login">
             <Button variant="outline" size="sm" className="border-border text-foreground hover:bg-secondary">
@@ -65,7 +62,6 @@ const Navbar = () => {
           </Link>
         </div>
 
-        {/* Mobile toggle */}
         <button
           className="lg:hidden text-foreground"
           onClick={() => setMobileOpen(!mobileOpen)}
@@ -75,7 +71,6 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -86,14 +81,14 @@ const Navbar = () => {
           >
             <div className="container mx-auto px-4 py-4 flex flex-col gap-3">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.href}
-                  href={link.href}
+                  to={link.href}
                   className="text-sm text-muted-foreground hover:text-foreground py-2"
                   onClick={() => setMobileOpen(false)}
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
               <div className="flex flex-col gap-2 pt-2 border-t border-border">
                 <Link to="/login"><Button variant="outline" size="sm" className="w-full">Iniciar Sesión</Button></Link>
