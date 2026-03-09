@@ -20,6 +20,8 @@ import Transactions from "./pages/dashboard/Transactions";
 import DashboardSettings from "./pages/dashboard/DashboardSettings";
 import Marketplace from "./pages/dashboard/Marketplace";
 import AssetDetail from "./pages/dashboard/AssetDetail";
+import TokensPage from "./pages/dashboard/TokensPage";
+import Academy from "./pages/dashboard/Academy";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
