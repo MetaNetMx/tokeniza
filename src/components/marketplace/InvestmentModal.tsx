@@ -47,7 +47,7 @@ const InvestmentModal = ({ open, onOpenChange, asset }: Props) => {
       // Insert transaction
       const { error: txErr } = await supabase.from("transactions").insert({
         user_id: user.id,
-        type: "investment",
+        type: "buy",
         amount: total,
         asset_name: asset.name,
         description: `Compra de ${quantity} tokens ${asset.token_symbol}`,
