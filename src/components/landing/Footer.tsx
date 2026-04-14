@@ -99,6 +99,7 @@ const Footer = () => {
             <a href="#" className="hover:text-foreground transition-colors">LinkedIn</a>
             <a href="#" className="hover:text-foreground transition-colors">Telegram</a>
             <a href="#" className="hover:text-foreground transition-colors">Discord</a>
+            <a href="https://wa.me/523323437338" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">WhatsApp</a>
           </div>
         </div>
       </div>
