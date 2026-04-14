@@ -52,7 +52,7 @@ const IssuerSettings = () => {
             </div>
             <div className="space-y-2">
               <Label>Teléfono de Contacto</Label>
-              <Input placeholder="+52 55 1234 5678" />
+              <Input placeholder="+52 33 2343 7338" />
             </div>
           </div>
           <Button>Guardar Cambios</Button>

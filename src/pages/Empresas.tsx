@@ -309,7 +309,13 @@ const Empresas = () => {
                   </div>
                   <div className="flex items-center gap-3">
                     <Phone className="w-5 h-5 text-primary" />
-                    <span>+52 55 1234 5678</span>
+                    <span>+52 3323437338</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <MessageCircle className="w-5 h-5 text-green-500" />
+                    <a href="https://wa.me/523323437338" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+                      WhatsApp: +52 3323437338
+                    </a>
                   </div>
                   <div className="flex items-center gap-3">
                     <MapPin className="w-5 h-5 text-primary" />
