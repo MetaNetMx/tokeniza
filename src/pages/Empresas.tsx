@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
-import { Building2, Shield, Zap, Users, TrendingUp, Globe, ChevronRight, Check, Mail, Phone, MapPin } from "lucide-react";
+import { Building2, Shield, Zap, Users, TrendingUp, Globe, ChevronRight, Check, Mail, Phone, MapPin, MessageCircle } from "lucide-react";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import { toast } from "sonner";
